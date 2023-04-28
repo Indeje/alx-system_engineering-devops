@@ -1,1 +1,3 @@
 #!/usr/bin/env bash
+# Bash script to show bash PID
+pgrep -f bash | while read pid; do echo "$pid $(ps -p "$pid" -o comm=)"; done | awk '{print $1, $2}'
